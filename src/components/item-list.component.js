@@ -6,13 +6,13 @@ import {
   TransitionGroup,
 } from 'react-transition-group';
 
-const FavouriteItemsComponent = ({items, handleRemoveItem}) => {
+const ItemListComponent = ({items, handleRemoveItem}) => {
   const sumItems = () => {
     return items.map(e => e.sellingMode.price.amount).reduce((total, e) => total + Number.parseFloat(e), 0).toFixed(2);
   };
   return (
     <Container>
-      <Title>Fav items ({sumItems()} zł)</Title>
+      <Title>Shopping list ({sumItems()} zł)</Title>
       <ItemList>
         {items.map(e =>
           <CSSTransition key={e.id} timeout={300} classNames="fade">
@@ -45,4 +45,4 @@ const Container = styled.div`
     overflow-x: hidden;
   `;
 
-export default FavouriteItemsComponent;
+export default ItemListComponent;

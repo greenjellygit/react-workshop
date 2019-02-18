@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ItemComponent from "../components/item.component";
 import {Redirect} from "react-router-dom";
 import styled from "styled-components";
-import FavouriteItemsComponent from "../components/favourite-items.component";
+import ItemListComponent from "../components/item-list.component";
 import SpinnerComponent from "../components/spinner.component";
 import {clients} from "../config/clients";
 
@@ -73,7 +73,7 @@ export default class SearchContainer extends Component {
 
     return (
       <Container>
-        <FavouriteItemsComponent items={this.state.selectedItems} handleRemoveItem={this.handleRemoveItem}/>
+        <ItemListComponent items={this.state.selectedItems} handleRemoveItem={this.handleRemoveItem}/>
         <SearchPanelContainer>
           <h1>Find what you want!</h1>
           <form onSubmit={this.onSubmit}>
